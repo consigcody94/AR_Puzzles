@@ -59,7 +59,7 @@ More trivial answers here would be 4-letter words somehow related to Arweave or 
 
 UPDATE: Why are all the lines so crooked on this picture? Seems like some latters but drawn with curved lines. Maybe its a letter on the water serface while the wave goes over it? OR MAYBE it point out to the ARC (the piece of circle, curved line). ARC.CASH right?! And chronologically the renaming the project and its native coin from **ARC** to **AR.CASH** was more earlier than later [ARC > AR.CASH](https://arweave.medium.com/arc-ar-cash-f1647c3f456f). Another interesting fact. Look letters - they looks like "AH NO". What if that point us to "NOAH" -> NOAH ARK. ARK again. Athoug, remind the fact that NOAH TOOK animals in pairs to his ark to save them. The 1800 participants of the ["The Arweave Community Token Sale, Part Two"](https://arweave.medium.com/announcing-the-arweave-community-token-sale-part-two-28f2b37c73d6) has been ["...hand-picked..."](https://arweave.medium.com/arweave-network-launch-report-b7e7ffac0f75) .
 
-Finally, i consider the next keys: `2014, 2015, 2016, 2017, 2018, 2019, anno, year, a16z, ANHO, hack, logo, tags, apps, dapp, text, icon, name, page, anon, html, link, http, main, mail, type, json, file, luck, free, drop, UNCE, curl, data, from, Noah,Cash,1800,hand,pick,pair,ar->`
+Finally, i consider the next keys: `2014, 2015, 2016, 2017, 2018, 2019, anno, year, a16z, ANHO, hack, logo, tags, apps, dapp, text, icon, name, page, anon, html, link, http, main, mail, type, json, file, luck, free, drop, UNCE, curl, data, from, Noah,Cash,1800,hand,pick,pair,ar->,1984`
 
 ## 2-nd key
 ![2-nd key](https://raw.githubusercontent.com/HomelessPhD/AR_Puzzles/main/PZL3/pics/2.png )
@@ -343,6 +343,11 @@ T + R + E + E = 20 + 18 + 5 + 5 = 48 .... 4 branches .... 8 leafs..?
 
 "
 
+7) Some telegema member noticed (pretty exotic to me idea) that pic1 similar to how the canonical Big Brother (1984) drawn 
+
+![8-th key](https://github.com/HomelessPhD/AR_Puzzles/blob/1b536a0765b7a18a630143a8cee46c95403ffb9d/PZL3/pics/BIG_BROTHER.jpg)
+
+AND, that 1 9 8 4 translated into alphabet would be A I H D ....
 `to be continued`
 
 # Brute-Force - "that's impossible (?!)" [12](https://www.youtube.com/watch?v=6ixvpLCdqkA)
