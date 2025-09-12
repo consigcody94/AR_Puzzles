@@ -343,11 +343,11 @@ T + R + E + E = 20 + 18 + 5 + 5 = 48 .... 4 branches .... 8 leafs..?
 
 "
 
-7) Some telegema member noticed (pretty exotic to me idea) that pic1 similar to how the canonical Big Brother (1984) drawn 
+7) Community member noticed (pretty exotic to me idea) that pic 1 is similar to how the canonical Big Brother (1984) drawn 
 
 ![8-th key](https://github.com/HomelessPhD/AR_Puzzles/blob/1b536a0765b7a18a630143a8cee46c95403ffb9d/PZL3/pics/BIG_BROTHER.jpg)
 
-AND, that 1 9 8 4 translated into alphabet would be A I H D ....
+AND, that 1 9 8 4 translated into english alphabet would be A I H D ....
 `to be continued`
 
 # Brute-Force - "that's impossible (?!)" [12](https://www.youtube.com/watch?v=6ixvpLCdqkA)
