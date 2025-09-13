@@ -63,6 +63,8 @@ CUDA ID, CUDA GRID, CUDA BLOCK - are parameters that has been described previous
 cuda_ids                  =0,1
 cuda_grid                 =72,32
 cuda_block                =256,128
+...
+single_thread_speed       =1,2
 
 this way the script will run the manage the working plan among two GPUs feeding them with remained yet unbrutted portions of a job from JOB_list.txt with an appropriate GRID and BLOCK parameters.
 
