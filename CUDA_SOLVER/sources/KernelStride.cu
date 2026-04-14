@@ -30,7 +30,6 @@ cudaError_t deviceSynchronize(std::string name_kernel, std::string log_name) {
 }
 
 
-//    bruteConfigStruct* config = NULL;
 int KernelStrideClass::init(std::string log_name)
 {
 
@@ -61,25 +60,13 @@ int KernelStrideClass::init(std::string log_name)
     return 0;
 }
 
-//    bruteJOBStruct* job = NULL;
-//    retStruct* ret = NULL;
 int KernelStrideClass::start(uint64_t grid, uint64_t block, std::string log_name)
 {
-//    if (cudaMemcpy(dt->dev.job, dt->host.job, sizeof(bruteJOBStruct), cudaMemcpyHostToDevice) != cudaSuccess) 
-//    {
-//        tools::logMessage("ERROR: cudaMemcpy to ->dev.job failed!", log_name);
-//        return -1; 
-//    }
     if (cudaMemcpyAsync(dt->dev.job, dt->host.job, sizeof(bruteJOBStruct), cudaMemcpyHostToDevice, dt->stream1) != cudaSuccess) 
     {
         tools::logMessage("ERROR: cudaMemcpyAsync to ->dev.job failed!", log_name);
         return -1; 
     }
-//    if (cudaMemset(dt->dev.ret, 0, sizeof(retStruct)) != cudaSuccess) 
-//    { 
-//        tools::logMessage("ERROR: cudaMemset ->dev.ret failed!", log_name);
-//        return -1; 
-//    }        
     if (cudaMemsetAsync(dt->dev.ret, 0, sizeof(retStruct), dt->stream1) != cudaSuccess) 
     { 
         tools::logMessage("ERROR: cudaMemset ->dev.ret failed!", log_name);
