@@ -21,8 +21,19 @@ def sha512_11512(key):
     
     return key_i
 
+def monitor_failsafe(FAILSAFE_ev):
+    while not FAILSAFE_ev.is_set():
+        try:
+            with open('failsafe_AR_10.txt', 'r') as f:
+                flag = int(next(f))
+                if flag:
+                    FAILSAFE_ev.set()
+                    break
+        except Exception:
+            pass
+        time.sleep(1)
 
-def t_job(t_id, T_FOUND_ev, left, right, answers_list, B_A_ev):
+def t_job(t_id, T_FOUND_ev, left, right, answers_list, B_A_ev, FAILSAFE_ev):
     log_str(f'./LOG/main.log', f'{t_id}: {left}, {right}')  
     
     failsafe_file_closing_flag = 0
@@ -65,10 +76,7 @@ def t_job(t_id, T_FOUND_ev, left, right, answers_list, B_A_ev):
         
         hashed_answer.clear()
             
-        with open('failsafe_AR_10.txt', 'r') as f:
-            failsafe_file_closing_flag = int(next(f))
-                
-        if failsafe_file_closing_flag:
+        if FAILSAFE_ev.is_set():
             log_str(f'./LOG/{t_id}_main.log', f'Finishing by failsafe')
             log_str(f'./LOG/main.log', f'[{t_id}] Finishing by failsafe')
             break
@@ -168,14 +176,19 @@ t_num = 8
 t = [0] * t_num
 T_FOUND_ev = Event()
 T_FOUND_ev.clear()
+FAILSAFE_ev = Event()
+FAILSAFE_ev.clear()
 with open('failsafe_AR_10.txt', 'w') as f:
     f.write('%d' % 0)
+
+monitor_t = Thread(target=monitor_failsafe, args=(FAILSAFE_ev,), daemon=True)
+monitor_t.start()
     
 solution_space_size = len(answers_list)
 left_right = [(i*((solution_space_size-1)//t_num + 1), min((i+1)*((solution_space_size-1)//t_num + 1)-1, (solution_space_size-1))) for i in range(0, t_num)]
 
 for i in range(t_num):
-    t[i] = Thread(target = t_job, args=(i,    T_FOUND_ev, left_right[i][0], left_right[i][1],  answers_list, B_A_ev) )
+    t[i] = Thread(target = t_job, args=(i,    T_FOUND_ev, left_right[i][0], left_right[i][1],  answers_list, B_A_ev, FAILSAFE_ev) )
     t[i].start()
     time.sleep(3)
     
