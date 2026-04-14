@@ -1,4 +1,5 @@
 import os.path
+import subprocess
 import time
 from threading import Thread
 from threading import Event
@@ -37,7 +38,7 @@ def t_job(t_id, T_FOUND_ev, left, right, answers_list, B_A_ev):
         for i in range((left + Ib*BATCH_SIZE), min(left + (Ib+1)*BATCH_SIZE, right+1)):
             hashed_answer.append(sha512_11512(answers_list[i]))
 
-        result = os.popen("node pzl3_pageCODE.js "+ " ".join(hashed_answer)).read().strip('\n')
+        result = subprocess.run(["node", "pzl3_pageCODE.js"] + hashed_answer, capture_output=True, text=True).stdout.strip('\n')
 
         if ( "1" in result):
             solution = answers_list[(left + Ib*BATCH_SIZE) + result.find("1")]
