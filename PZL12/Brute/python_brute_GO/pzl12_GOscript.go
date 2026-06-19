@@ -88,16 +88,27 @@ func TiamatDecodeCheck(hasher hash.Hash, pass string) string {
 	}
 }
 
-func b64toBinary() {
-	data, err := base64.StdEncoding.DecodeString(msg)
+func parseMessage(m string) ([]byte, []byte, error) {
+	data, err := base64.StdEncoding.DecodeString(m)
 	if err != nil {
-	panic(errors.New("base64 invalid"))
+		return nil, nil, errors.New("base64 invalid")
+	}
+	if len(data) < 16 {
+		return nil, nil, errors.New("Invalid data")
 	}
 	if string(data[:8]) != "Salted__" {
-		panic(errors.New("Invalid data"))
+		return nil, nil, errors.New("Invalid data")
 	}
-	pz_salt = data[8:16]
-	pz_cipherBytes = data[16:]
+	return data[8:16], data[16:], nil
+}
+
+func b64toBinary() {
+	salt, cipherBytes, err := parseMessage(msg)
+	if err != nil {
+		panic(err)
+	}
+	pz_salt = salt
+	pz_cipherBytes = cipherBytes
 	pz_cipherBytesLen = len(pz_cipherBytes)
 }
 
